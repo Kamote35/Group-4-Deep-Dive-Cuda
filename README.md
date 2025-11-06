@@ -110,16 +110,26 @@ Baseline C execution time = 2078.384433 ms
 | CUDA data init in a CUDA kernel | | |
 
 ## 4. Analysis of results
-    - Justify your kernel execution time.  
-    - Analysis of speed performance across all platforms
+
+The kernel execution time varies significantly depending on the memory management strategy used. The CUDA Unified Memory version has the longest execution time (954.22 ms) because the GPU performs on-demand page migrations from host to device, causing frequent page faults and stalling execution. When prefetching is applied, the runtime improves to 761.81 ms since data is moved to GPU memory before kernel launch, reducing migration overhead. Adding page creation further lowers the time to 454.08 ms by pre-allocating pages and reducing setup delays. With memory advice (cudaMemAdvise), execution time drops dramatically to 14.45 ms because the GPU can now optimize data placement and access patterns, eliminating most migration and synchronization delays. The classic memcpy approach achieves the fastest time (13.30 ms) since data transfers are explicitly managed and fully reside in GPU global memory before execution, avoiding all Unified Memory overhead. These results show that the kernel is primarily memory-bound, and improving memory handling directly enhances execution efficiency.
+
+Across all platforms, performance improves as memory handling and parallelization become more efficient. On the CPU side, the x86-64 scalar version serves as the baseline (287.65 ms), while SIMD XMM and SIMD YMM versions achieve 86.49 ms and 63.96 ms respectively, showing expected gains from wider vector processing. The CUDA Unified Memory version is initially slower than CPU SIMD implementations due to its heavy page migration overhead. However, as optimizations are added—prefetching, page creation, and memory advice the GPU performance improves drastically, ultimately surpassing all CPU versions. The CUDA Prefetch + Page Creation + Memadvise and Classic memcpy implementations achieve speedups of 143.86× and 156.33× over the baseline, respectively, highlighting the GPU’s superior parallel capability when memory access is efficiently managed. Overall, while Unified Memory simplifies programming, explicit memory management remains essential for maximizing GPU performance, especially for large-scale data processing.
     
 a.) What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
 
+Unified Memory variants include additional runtime migration and management overheads, while explicit memory management isolates computation from data transfer, resulting in the lowest execution overhead and highest performance.
+
 b.) How does block size affect execution time (observing various elements and using max blocks)?  Which block size will you recommend?
+
+Block size affects GPU occupancy and efficiency. If the block size is too small, it underutilizes GPU resources, extending execution times. Increasing it improves parallelism and hides memory latency, reducing runtime. If the blocks are too large, close to 1024 threads can cause register and shared memory pressure, slightly lowering performance. Block size of 512 threads offers the best balance between occupancy and resource use, giving consistently fast execution for large datasets.
 
 c) Is prefetching always recommended, or should CUDA manage memory?  Give some use cases in which one is better than the other.
 
+Prefetching is good for large predictable GPU workloads like matrix multiplication, image processing and simulation. CUDA-managed memory is better for mixed CPU–GPU tasks, adaptive algorithms, or when programming simplicity is more important than peak performance.
+
 d.) Between SIMD and SIMT, which one is faster? Give some use cases in which one is better than the other.
+
+SIMT is generally faster for massively parallel tasks like image processing, deep learning, and scientific simulations. SIMD is better for smaller-scale, low-latency tasks such as signal processing, vector math, or data compression. 
 
 ## 5. Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
 
