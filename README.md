@@ -38,6 +38,15 @@ iii.)
 ##### C screenshot
 <img width="1070" height="489" alt="image" src="https://github.com/user-attachments/assets/7e0797db-72d8-4b02-9480-e122d89fe6f0" />
 
+##### x86-64
+<img width="1097" height="242" alt="image" src="https://github.com/user-attachments/assets/fcbf106c-4dd0-4d98-ac5b-24ed38357516" />
+
+##### x86-64 SIMD XMM 
+<img width="1108" height="242" alt="image" src="https://github.com/user-attachments/assets/34e211b0-45a5-46d4-87f8-814e705edd4e" />
+
+##### x86-64 SIMD YMM 
+<img width="1105" height="235" alt="image" src="https://github.com/user-attachments/assets/847f9032-d320-4715-9be1-35127155da7b" />
+
 ##### CUDA Grid Stride Loop screenshot
 <img width="1073" height="575" alt="image" src="https://github.com/user-attachments/assets/ef39a81a-8889-453d-98f3-bf0228c59611" />
 
@@ -70,9 +79,9 @@ Baseline C execution time = 2078.384433 ms
 
 | 2^28 elements CUDA (block size = 1024) | Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) | Speedup vs baseline C program |
 | :--- | :--- | :--- |
-| x86-64 | | |
-| x86-64 SIMD XMM | | |
-| x86-64 SIMD YMM | | |
+| x86-64 | 287.654 ms | 7.2253 |
+| x86-64 SIMD XMM | 86.490 ms | 24.0303 |
+| x86-64 SIMD YMM | 63.964 ms | 32.4930 |
 | CUDA Unified | 954.2172 ms | 2.1781 |
 | CUDA Prefetch | 761.8129 ms | 2.7282 |
 | CUDA Prefetch+page creation | 454.08ms | 4.5771 |
