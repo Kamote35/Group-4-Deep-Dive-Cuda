@@ -66,10 +66,8 @@ iii.)
 ***Speedup {Number of blocks/grid = max (as per formula), multiple kernel run}***
 Baseline C execution time = ---------------------
 
-| | Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) | Speedup vs baseline C program |
+| 2^28 elements CUDA (block size = 1024) | Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) | Speedup vs baseline C program |
 | :--- | :--- | :--- |
-| 2^28 elements | | |
-| CUDA block size = 1024 | | |
 | x86-64 | | |
 | x86-64 SIMD XMM | | |
 | x86-64 SIMD YMM | | |
