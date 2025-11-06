@@ -57,8 +57,10 @@ iii.)
 <img width="1076" height="313" alt="image" src="https://github.com/user-attachments/assets/a80f1dcb-244a-4e10-b1ec-4d578679bf13" />
 
 ##### CUDA Grid Stride Loop with Prefetch, Page Creation, and Mem Advise
-<img width="1077" height="323" alt="image" src="https://github.com/user-attachments/assets/7ff61daa-4bf7-459a-8e12-4075b583b8e3" />
+<img width="1074" height="328" alt="image" src="https://github.com/user-attachments/assets/7b85d1b8-7110-4454-b183-9d4a4eb6a0fe" />
 
+##### CUDA Grid Stride Loop with Prefetch, Page Creation, and Mem Advise nvprof log
+<img width="1077" height="323" alt="image" src="https://github.com/user-attachments/assets/7ff61daa-4bf7-459a-8e12-4075b583b8e3" />
 ## 2. Screenshot of nSight for all CUDA variants
 
 ## 3. Comparative table of execution time (C, CUDA variants, x86-64, XMM, YMM) (see below some guide questions)
@@ -71,10 +73,10 @@ Baseline C execution time = ---------------------
 | x86-64 | | |
 | x86-64 SIMD XMM | | |
 | x86-64 SIMD YMM | | |
-| CUDA Unified | | |
-| CUDA Prefetch | | |
-| CUDA Prefetch+page creation | | |
-| CUDA Prefetch+Page creatittion+memadvise | | |
+| CUDA Unified | 954.2172 ms | |
+| CUDA Prefetch | 761.8129 ms | |
+| CUDA Prefetch+page creation | 454.08ms | |
+| CUDA Prefetch+Page creatittion+memadvise | 14.447184 ms | |
 | CUDA classic MEMCPY | | |
 | CUDA data init in a CUDA kernel | | |
 
