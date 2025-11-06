@@ -35,6 +35,22 @@ iii.)
 
 ## 1. Screenshot of the program output with correctness check AND execution time for all cases
 
+##### C screenshot
+
+##### CUDA Grid Stride Loop screenshot
+
+##### CUDA Grid Stride Loop nvprof log
+
+##### CUDA Grid Stride Loop with Prefetch
+
+##### CUDA Grid Stride Loop with Prefetch nvprof log
+
+##### CUDA Grid Stride Loop with Prefetch and Page Creation
+
+##### CUDA Grid Stride Loop with Prefetch and Page Creation nvprof log
+
+##### CUDA Grid Stride Loop with Prefetch, Page Creation, and Mem Advise
+
 ## 2. Screenshot of nSight for all CUDA variants
 
 ## 3. Comparative table of execution time (C, CUDA variants, x86-64, XMM, YMM) (see below some guide questions)
