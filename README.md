@@ -27,11 +27,9 @@ vii.) Another CUDA kernel that initializes the data
 
 ## AI Usage Declaration
 
-i.) 
+i.) Generative AI has been used to help students further their understanding on CUDA C since the main point of this project is for the learners to "Deep Dive" on CUDA C. Usage of AI tools such as: Chat-GPT, Gemini, and Copilot;includes but not limited to: perform error checks on the coding of the various programs (to see if they are being implemented the way the specs intend them to be), help students understand which parts of the Nsight Systems timeline are important for analysis and comparison of this project.
 
-ii.) 
 
-iii.)
 
 ## 1. Screenshot of the program output with correctness check AND execution time for all cases
 
