@@ -34,6 +34,14 @@ ii.)
 iii.)
 
 ## 1. Screenshot of the program output with correctness check AND execution time for all cases
+---
+### Execution Times:
+| Kernel Name | Min. Time (ms) | Max. time (ms) | Avg. Time (ms) |  Speedup  |
+| ----- | ----- | ----- | ----- | ----- |
+| C Version | 1766.882 | 2302.051 | 1885.188 | 0 |
+| non-SIMD x86-64 | 733.929 | 1020.998 | 811.884 | 2.32 |
+| SIMD x86 Assembly (XMM) | 292.914 | 343.741 | 313.006 | 6.02 |
+| SIMD x86 Assembly (yMM) | 261.542 | 286.411 | 274.314 | 4.87 |
 
 ## 2. Screenshot of nSight for all CUDA variants
 
