@@ -66,17 +66,17 @@ iii.)
 ## 3. Comparative table of execution time (C, CUDA variants, x86-64, XMM, YMM) (see below some guide questions)
 
 ***Speedup {Number of blocks/grid = max (as per formula), multiple kernel run}***
-Baseline C execution time = ---------------------
+Baseline C execution time = 2078.384433 ms
 
 | 2^28 elements CUDA (block size = 1024) | Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) | Speedup vs baseline C program |
 | :--- | :--- | :--- |
 | x86-64 | | |
 | x86-64 SIMD XMM | | |
 | x86-64 SIMD YMM | | |
-| CUDA Unified | 954.2172 ms | |
-| CUDA Prefetch | 761.8129 ms | |
-| CUDA Prefetch+page creation | 454.08ms | |
-| CUDA Prefetch+Page creatittion+memadvise | 14.447184 ms | |
+| CUDA Unified | 954.2172 ms | 2.1781 |
+| CUDA Prefetch | 761.8129 ms | 2.7282 |
+| CUDA Prefetch+page creation | 454.08ms | 4.5771 |
+| CUDA Prefetch+Page creatittion+memadvise | 14.4472 ms | 143.8607 |
 | CUDA classic MEMCPY | | |
 | CUDA data init in a CUDA kernel | | |
 
