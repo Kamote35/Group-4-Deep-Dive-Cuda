@@ -34,22 +34,10 @@ ii.)
 iii.)
 
 ## 1. Screenshot of the program output with correctness check AND execution time for all cases
----
-### Execution Times:
-| Kernel Name | Min. Time (ms) | Max. time (ms) | Avg. Time (ms) |  Speedup  |
-| ----- | ----- | ----- | ----- | ----- |
-| C Version | 1766.882 | 2302.051 | 2078.384433 | 0 |
-| non-SIMD x86-64 | 733.929 | 1020.998 | 811.884 | 2.32 |
-| SIMD x86 Assembly (XMM) | 292.914 | 343.741 | 313.006 | 6.02 |
-| SIMD x86 Assembly (yMM) | 261.542 | 286.411 | 274.314 | 4.87 |
 
 ## 2. Screenshot of nSight for all CUDA variants
 
 ## 3. Comparative table of execution time (C, CUDA variants, x86-64, XMM, YMM) (see below some guide questions)
-
-## 4. Analysis of results
-    - Justify your kernel execution time.  
-    - Analysis of speed performance across all platforms
 
 ***Speedup {Number of blocks/grid = max (as per formula), multiple kernel run}***
 Baseline C execution time = ---------------------
@@ -67,6 +55,10 @@ Baseline C execution time = ---------------------
 | CUDA Prefetch+Page creatittion+memadvise | | |
 | CUDA classic MEMCPY | | |
 | CUDA data init in a CUDA kernel | | |
+
+## 4. Analysis of results
+    - Justify your kernel execution time.  
+    - Analysis of speed performance across all platforms
     
 a.) What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
 
