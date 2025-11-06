@@ -36,20 +36,28 @@ iii.)
 ## 1. Screenshot of the program output with correctness check AND execution time for all cases
 
 ##### C screenshot
+<img width="1070" height="489" alt="image" src="https://github.com/user-attachments/assets/7e0797db-72d8-4b02-9480-e122d89fe6f0" />
 
 ##### CUDA Grid Stride Loop screenshot
+<img width="1073" height="575" alt="image" src="https://github.com/user-attachments/assets/ef39a81a-8889-453d-98f3-bf0228c59611" />
 
 ##### CUDA Grid Stride Loop nvprof log
+<img width="1078" height="313" alt="image" src="https://github.com/user-attachments/assets/b40033e7-2329-4272-9b73-e9e28afe5a5c" />
 
 ##### CUDA Grid Stride Loop with Prefetch
+<img width="1073" height="327" alt="image" src="https://github.com/user-attachments/assets/bd7fd787-baad-49d8-bb09-b1319d2ceeb5" />
 
 ##### CUDA Grid Stride Loop with Prefetch nvprof log
+<img width="1076" height="340" alt="image" src="https://github.com/user-attachments/assets/bfe8e8aa-8660-4e80-9441-8bc6b0c03b3d" />
 
 ##### CUDA Grid Stride Loop with Prefetch and Page Creation
+<img width="1073" height="322" alt="image" src="https://github.com/user-attachments/assets/c0b43496-6446-458c-a5f5-4b57e9332f0e" />
 
 ##### CUDA Grid Stride Loop with Prefetch and Page Creation nvprof log
+<img width="1076" height="313" alt="image" src="https://github.com/user-attachments/assets/a80f1dcb-244a-4e10-b1ec-4d578679bf13" />
 
 ##### CUDA Grid Stride Loop with Prefetch, Page Creation, and Mem Advise
+<img width="1077" height="323" alt="image" src="https://github.com/user-attachments/assets/7ff61daa-4bf7-459a-8e12-4075b583b8e3" />
 
 ## 2. Screenshot of nSight for all CUDA variants
 
