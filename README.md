@@ -103,16 +103,6 @@ Baseline C execution time = 2078.384433 ms
 ## 4. Analysis of results
     - Justify your kernel execution time.  
     - Analysis of speed performance across all platforms
-
-    Platform	Time (ms)	Speedup vs Baseline (C)	Observations
-x86-64 (scalar)	287.654	7.23×	Baseline CPU version. Shows decent performance but limited by single-core memory bandwidth.
-x86-64 SIMD XMM (128-bit)	86.490	24.03×	3.3× faster than scalar, consistent with 4-float SIMD parallelism (SSE). Achieves good vector utilization.
-x86-64 SIMD YMM (256-bit)	63.964	32.49×	~1.35× faster than XMM, close to expected theoretical doubling with AVX2. CPU vectorization efficiently uses cache locality and memory prefetch.
-CUDA Unified	954.2172	2.18×	Despite GPU potential, performance collapses due to page-fault overhead. The kernel spends more time migrating data than computing.
-CUDA Prefetch	761.8129	2.73×	Improvement but still slower than CPU SIMD. Highlights the cost of Unified Memory management when not fully optimized.
-CUDA Prefetch + Page Creation	454.08	4.58×	GPU now catching up to CPU scalar performance but still slower than SIMD CPU. Memory management partially optimized.
-CUDA Prefetch + Page Creation + Memadvise	14.4472	143.86×	Huge jump—now GPU is utilized effectively. Memory fully resident on device before computation, minimal overhead.
-CUDA Classic memcpy	13.2952	156.33×	Best performer. Explicit transfers give full control and highest throughput. Demonstrates that manual data management > unified memory for performance-critical workloads.
     
 a.) What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
 
