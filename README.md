@@ -82,6 +82,17 @@ iii.)
 ##### Another CUDA kernel that initializes the data nvprof log
 
 ## 2. Screenshot of nSight for all CUDA variants
+##### CUDA Mvp2 Nsight (GPU page faults)
+<img width="1247" height="410" alt="image" src="https://github.com/user-attachments/assets/4e81a05d-5211-4985-a9d4-fece06c833ae" />
+
+##### CUDA Mvp3 Nsight (Prefetching)
+<img width="1248" height="405" alt="image" src="https://github.com/user-attachments/assets/a676c313-0407-4b8b-8bca-a9c17d5e0aef" />
+
+##### CUDA Mvp4 Nsight (Prefetching + Page creation)
+<img width="1247" height="410" alt="image" src="https://github.com/user-attachments/assets/0531189f-24b7-4c1e-93a9-0586120d999c" />
+
+##### CUDS Mvp5 Nsight (Prefetch + Page creation + Mem advise)
+<img width="1246" height="410" alt="image" src="https://github.com/user-attachments/assets/bd149138-bb1e-4e50-8979-80ccc6a360fa" />
 
 ## 3. Comparative table of execution time (C, CUDA variants, x86-64, XMM, YMM) (see below some guide questions)
 
