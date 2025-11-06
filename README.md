@@ -12,13 +12,10 @@
 ##### Variants: 
 
 i.) a C/C++ program version 
-[C_mvp1](images/Execution/C-screenshot.png)
 
 ii.) a CUDA program version using a grid-stride loop without prefetch and without mem advise 
-[CUDA_mvp2](images/Execution/CUDA-Grid-Stride-Loop-screenshot.png)
-[CUDA_mvp2_nvprof](images/nvprof/CUDA-Grid-Stride-Loop-nvprof-log.png)
 
-iii.) a CUDA program version using a grid-stride loop with prefetching but without page creation and without mem advise 
+iii.) a CUDA program version using a grid-stride loop with prefetching but without page creation and without mem advise
 
 iv.) a CUDA program version using a grid-stride loop with prefetch, with page creation but without mem advise 
 
