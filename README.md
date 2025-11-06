@@ -42,6 +42,14 @@ iii.)
 ## 4. Analysis of results
     - Justify your kernel execution time.  
     - Analysis of speed performance across all platforms
+    
+a.) What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
+
+b.) How does block size affect execution time (observing various elements and using max blocks)?  Which block size will you recommend?
+
+c) Is prefetching always recommended, or should CUDA manage memory?  Give some use cases in which one is better than the other.
+
+d.) Between SIMD and SIMT, which one is faster? Give some use cases in which one is better than the other.
 
 ## 5. Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
 
