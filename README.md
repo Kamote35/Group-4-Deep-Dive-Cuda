@@ -42,6 +42,23 @@ iii.)
 ## 4. Analysis of results
     - Justify your kernel execution time.  
     - Analysis of speed performance across all platforms
+
+***Speedup {Number of blocks/grid = max (as per formula), multiple kernel run}***
+Baseline C execution time = ---------------------
+
+| | Kernel time (up to the point necessary data to return to error checking part) (do not time the error checking routine) | Speedup vs baseline C program |
+| :--- | :--- | :--- |
+| 2^28 elements | | |
+| CUDA block size = 1024 | | |
+| x86-64 | | |
+| x86-64 SIMD XMM | | |
+| x86-64 SIMD YMM | | |
+| CUDA Unified | | |
+| CUDA Prefetch | | |
+| CUDA Prefetch+page creation | | |
+| CUDA Prefetch+Page creatittion+memadvise | | |
+| CUDA classic MEMCPY | | |
+| CUDA data init in a CUDA kernel | | |
     
 a.) What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
 
