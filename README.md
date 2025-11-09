@@ -133,4 +133,29 @@ SIMT is generally faster for massively parallel tasks like image processing, dee
 
 ## 5. Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
 
+The first challenge was simply moving from working with one-dimensional lists to a two-dimensional grid. We had to carefully change our code to find the correct spot in the big matrix A using the row and column numbers. The biggest performance problem was in our first GPU attempt. Even though the GPU is fast, it was slow because it had to stop and grab tiny pieces of data from the main computer memory every time it needed them. The main solution was realizing we had to send the data to the GPU all at once before the calculation started. It worked like a massive data transfer ahead of time. This proactive move instantly made the kernel run more than twice as fast. We learned that for huge problems, just using the GPU isn't enough and you have to manage the data movement yourself for maximum speed.
+
 ## 6. Discuss, based on your experience on the particular project use case, the differences between SIMD and SIMT in handling parallelism.  Include also the PROS and CONS of using SIMD and SIMT in your use case.
+
+Theoretically, the CPU's SIMD  acts like a small, highly efficient team on a single core, performing the same calculation on a few data points simultaneously using wide registers (like processing 8 numbers at once). It is fast and predictable but limited by the number of CPU cores and lanes, requiring careful coding. In contrast, the GPU's SIMT is a massive, coordinated army of thousands of threads, each doing the same simple calculation on its own element. While SIMT can be slower if threads run into memory problems or take different execution paths, its sheer scale allows it to process vastly more data simultaneously, achieving a much higher overall throughput and the fastest final execution time for your large-scale matrix operation when memory is managed correctly. 
+
+a.) SIMD Pros - 
+Quick to start, stable, and efficient.
+It’s ready right away because the data is nearby on the CPU.
+It's predictable and rarely runs into problems.
+    
+b.) SIMD Cons - 
+Too small, white few workers its slow, and hard to program.
+    
+c.) SIMT PROS - 
+Super fast total time, massive power, hides waiting.
+It finishes the whole job incredibly quickly.
+It uses tens of workers to handle huge problems easily.
+If one worker is waiting for data, the GPU just switches to another worker to keep busy.
+    
+d.) SIMT CONS - 
+Higher cost, Can be wasteful.
+It runs into big problems if the memory isn't perfectly set up (like the initial slowdown you saw).
+If your workers have to make different decisions, many of them just sit idle.
+    
+SIMD is great for small, quick, local tasks on the CPU. SIMT is absolutely necessary for huge, repetitive problems like your matrix, but only if you take the time to manage its memory.
